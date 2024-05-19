@@ -1,16 +1,21 @@
 "use strict"
-let userName = prompt('Your name', 'Admin');
-if (userName == 'Admin') {
-    let pass = prompt('Password', 'Я главный');
-    if (pass === 'Я главный') {
-        alert('Здравствуйте!');
-    } else if (pass === '' || pass === null) {
-        alert('Отменено');
-    } else {
-        alert('Неверный пароль');
-    }
-} else if (userName === '' || userName === null) {
-    alert('Отменено');
-} else {
-    alert('Я вас не знаю');
-}
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+const a = prompt('Один из последних просмотренных фильмов?', ''), 
+      b = prompt('На сколько оцените его?', ''),
+      c = prompt('Один из последних просмотренных фильмов?', ''), 
+      d = prompt('На сколько оцените его?', '');
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);

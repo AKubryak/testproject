@@ -12,7 +12,7 @@ function promotion(result) {
 }
 
 convert(500, usdCurr);
-promotion( convert(500, usdCurr) );
+promotion(convert(500, usdCurr));
 /* 2 */
 function test() {
     for (let i = 0; i < 5; i++) {
@@ -24,8 +24,8 @@ function test() {
 
 test();
 /* 3 */
-function doNoting() {};
-console.log( doNoting() === undefined );
+function doNoting() { };
+console.log(doNoting() === undefined);
 /* 4 test */
 // Место для первой задачи
 function sayHello(name) {
@@ -39,7 +39,7 @@ function returnNeighboringNumbers(num) {
 
 // Место для третьей задачи
 function getMathResult(num, times) {
-    if (typeof(times) !== 'number' || times <= 0) {
+    if (typeof (times) !== 'number' || times <= 0) {
         return num;
     }
 
@@ -54,3 +54,73 @@ function getMathResult(num, times) {
     }
     return str;
 }
+/* 5 test */
+// Место для первой задачи
+function calculateVolumeAndArea(edge) {
+    if (typeof (edge) == 'number' && edge > 0 && Number.isInteger(edge)) {
+        return `Объем куба: ${edge * edge * edge}, площадь всей поверхности: ${6 * edge * edge}`;
+    } else {
+        return 'При вычислении произошла ошибка';
+    }
+}
+
+calculateVolumeAndArea(-5);
+
+// Место для второй задачи (номер и вагон)
+function getCoupeNumber(num) {
+    if (typeof (num) == 'number' && num > 0 && num <= 36 && Number.isInteger(num)) {
+        return Math.ceil(num / 4);
+    } else if (num == 0 || num > 36) {
+        return "Таких мест в вагоне не существует";
+    } else {
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }
+}
+
+getCoupeNumber(30);
+/* 6 test */
+// Место для первой задачи
+function getTimeFromMinutes(minutesTotal) {
+    if (typeof(minutesTotal !== 'number' || minutesTotal < 0 || !Number.isInteger())) {
+        return 'Ошибка, проверьте данные';
+    };
+
+    const hours = Math.floor(minutesTotal / 60);
+    const minutes = minutesTotal % 60;
+
+    let hoursStr = '';
+
+    switch (x) {
+        case 0:
+            hoursStr = 'часов';
+            break;
+        case 1:
+            hoursStr = 'час';
+            break;
+        case 2:
+        case 3:
+        case 4:
+            hoursStr = 'часа';
+            break;
+        default:
+            hoursStr = 'часов';
+    }
+
+    return `Это ${hours} ${hoursStr} ${minutes} минут`;
+}
+
+getTimeFromMinutes(180);
+
+// Место для второй задачи
+function findMaxNumber(a, b, c, d) {
+    if (typeof(a) !== 'number' || 
+        typeof(b) !== 'number' ||
+        typeof(c) !== 'number' ||
+        typeof(d) !== 'number') {
+        return 0;
+    } else {
+        return Math.max(a, b, c, d);
+    }
+}
+
+findMaxNumber();
